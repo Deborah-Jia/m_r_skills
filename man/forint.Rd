@@ -2,7 +2,7 @@
 % Please edit documentation in R/forint.R
 \name{forint}
 \alias{forint}
-\title{Formats numbers as Hungarian Forint}
+\title{Formats numbers as Hungarian Forints}
 \usage{
 forint(x)
 }
@@ -13,9 +13,9 @@ forint(x)
 string
 }
 \description{
-Formats numbers as Hungarian Forint
+Formats numbers as Hungarian Forints
 }
 \examples{
-forint(42)
-forint(10000000.213214)
+forint(45)
+forint(10001000.213814)
 }
