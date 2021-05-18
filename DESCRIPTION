@@ -1,7 +1,7 @@
 Package: mr
 Type: Package
 Title: Demo R package for the Mastering R skills class.
-Version: 0.1.0 
+Version: 0.1.0
 Author: Deborah <jia_li@student.ceu.edu>
 Maintainer: Deborah <jia_li@student.ceu.edu>
 Description: Demo R package for the Mastering R skills class home assignment.
