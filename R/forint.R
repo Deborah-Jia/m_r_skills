@@ -1,5 +1,5 @@
 #' Formats numbers as Hungarian Forints
-#' @param x number
+#' @param x number vector
 #' @return string
 #' @export
 #' @importFrom checkmate assert_number
@@ -7,6 +7,7 @@
 #' @examples
 #' forint(45)
 #' forint(10001000.213814)
+#' forint(1:10)
 
 forint <- function(x) {
   assert_number(x)
