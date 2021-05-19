@@ -1,8 +1,8 @@
-#' Look up the historical values of base currency in symbol currency.
-#' @param base
-#' @param symbols
-#' @param start_date
-#' @param end_date
+#' Look up the historical values of base currency in another currency.
+#' @param base date
+#' @param symbols date
+#' @param start_date currency symbol
+#' @param end_date currency symbol
 #' @inheritParams get_usdhuf
 #' @return \code{data.table} object
 #' @export
@@ -38,7 +38,11 @@ get_exchange_rates <- function(base= 'USD',
   }, error=function(e){
     log_error(e$message)
     Sys.sleep(1+retried^2)
-    get_exchange_rates(retried = retried+1)
+    get_exchange_rates(base= 'USD',
+                       symbols='HUF',
+                       start_date = Sys.Date() - 30,
+                       end_date= Sys.Date(),
+                       retried = retried+1)
   })
   log_info('1 {base} = {rate} {symbols}')
   rates

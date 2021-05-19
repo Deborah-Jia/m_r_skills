@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_exchange_rates.R
 \name{get_exchange_rates}
 \alias{get_exchange_rates}
-\title{Look up the historical values of base currency in symbol currency.}
+\title{Look up the historical values of base currency in another currency.}
 \usage{
 get_exchange_rates(
   base = "USD",
@@ -13,13 +13,21 @@ get_exchange_rates(
 )
 }
 \arguments{
+\item{base}{date}
+
+\item{symbols}{date}
+
+\item{start_date}{currency symbol}
+
+\item{end_date}{currency symbol}
+
 \item{retried}{number of times the function already failed}
 }
 \value{
 \code{data.table} object
 }
 \description{
-Look up the historical values of base currency in symbol currency.
+Look up the historical values of base currency in another currency.
 }
 \examples{
 get_exchange_rates()
