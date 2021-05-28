@@ -1,4 +1,4 @@
-# m_r_skills Package
+# Mastering R Skills 
 
 For the home assignment demo of CEU course Mastering R Skills. Important functions in the m_r_skills Package include:
 
