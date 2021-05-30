@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages
+# Mastering R Skills 
 
-You can use the [editor on GitHub](https://github.com/Deborah-Jia/m_r_skills/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+For the home assignment demo of CEU course Mastering R Skills. Important functions in the m_r_skills Package include:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Deborah-Jia/m_r_skills/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+* __forint__, add Hungarian Forint sign to pure number.
+* __get_usdhuf__, returns current price of one US dollar to Hungarian Forint.  
+* __get_bitcoin_price__, returns the current price of one bitcoin in US dollars.
+* __get_usdhufs__, returns historical prices of one US dollar to Hungarian Forint. You can decide the time range of your inquiry.
+* __get_exchange_rates__, returns historical prices of one currency (the base) to another currency (the symbols). You can decide the time range of your inquiry and the currency types.
