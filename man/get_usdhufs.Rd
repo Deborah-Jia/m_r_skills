@@ -7,6 +7,10 @@
 get_usdhufs(start_date = Sys.Date() - 30, end_date = Sys.Date(), retried = 0)
 }
 \arguments{
+\item{start_date}{first date of time series}
+
+\item{end_date}{last date of time series}
+
 \item{retried}{number of times the function already failed}
 }
 \value{
