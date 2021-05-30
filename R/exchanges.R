@@ -20,8 +20,8 @@ get_usdhuf <- function(retried=0){
 }
 
 #' Look up the historical values of a US dollar in Hungarian Forints
-#' @param start_date
-#' @param end_date
+#' @param start_date the first day of the time range you would like to query
+#' @param end_date the last day of the time range you would like to query
 #' @inheritParams get_usdhuf
 #' @return \code{data.table} object
 #' @export
