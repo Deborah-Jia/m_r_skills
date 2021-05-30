@@ -49,7 +49,9 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date= Sys.Date(), retr
   }, error=function(e){
     log_error(e$message)
     Sys.sleep(1+retried^2)
-    get_usdhufs(retried = retried+1)
+    get_usdhufs(start_date = Sys.Date() - 30,
+                end_date= Sys.Date(),
+                retried = retried+1)
   })
   log_info('1 USD = {usdhuf} HUF')
   usdhufs
