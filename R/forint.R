@@ -7,7 +7,6 @@
 #' @examples
 #' forint(45)
 #' forint(10001000.213814)
-#' forint(1:10)
 
 forint <- function(x) {
   assert_number(x)
