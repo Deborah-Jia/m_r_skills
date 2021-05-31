@@ -20,8 +20,13 @@ get_usdhuf <- function(retried=0){
 }
 
 #' Look up the historical values of a US dollar in Hungarian Forints
+<<<<<<< HEAD:R/exchanges.R
 #' @param start_date the first day of the time range you would like to query
 #' @param end_date the last day of the time range you would like to query
+=======
+#' @param start_date first date of time series
+#' @param end_date last date of time series
+>>>>>>> main:R/get_usdhufs.R
 #' @inheritParams get_usdhuf
 #' @return \code{data.table} object
 #' @export
@@ -49,7 +54,9 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date= Sys.Date(), retr
   }, error=function(e){
     log_error(e$message)
     Sys.sleep(1+retried^2)
-    get_usdhufs(retried = retried+1)
+    get_usdhufs(start_date = Sys.Date() - 30,
+                end_date= Sys.Date(),
+                retried = retried+1)
   })
   log_info('1 USD = {usdhuf} HUF')
   usdhufs
