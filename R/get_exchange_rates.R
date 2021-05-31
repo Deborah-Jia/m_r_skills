@@ -1,8 +1,8 @@
 #' Look up the historical values of base currency in another currency.
-#' @param base date
-#' @param symbols date
-#' @param start_date currency symbol
-#' @param end_date currency symbol
+#' @param base currency symbol
+#' @param symbols currency symbol
+#' @param start_date date
+#' @param end_date date
 #' @inheritParams get_usdhuf
 #' @return \code{data.table} object
 #' @export
