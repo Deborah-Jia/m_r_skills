@@ -38,7 +38,7 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date= Sys.Date(), retr
         base= 'USD',
         symbols='HUF',
         start_date = start_date,
-        end_date= end_date
+        end_date = end_date
       )
     )
     exchange_rates <- content(response)$rates

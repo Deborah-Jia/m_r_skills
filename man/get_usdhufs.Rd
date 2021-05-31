@@ -7,6 +7,10 @@
 get_usdhufs(start_date = Sys.Date() - 30, end_date = Sys.Date(), retried = 0)
 }
 \arguments{
+\item{start_date}{the first day of the time range you would like to query}
+
+\item{end_date}{the last day of the time range you would like to query}
+
 \item{retried}{number of times the function already failed}
 }
 \value{
