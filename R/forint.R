@@ -1,5 +1,5 @@
 #' Formats numbers as Hungarian Forints
-#' @param x number vector
+#' @param x number vector representing the number of forint
 #' @return string
 #' @export
 #' @importFrom checkmate assert_number

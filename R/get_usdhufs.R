@@ -3,13 +3,15 @@
 #' @return number
 #' @export
 #' @importFrom checkmate assert_number
-#' @importFrom logger log_error log_info
 #' @importFrom jsonlite fromJSON
+#' @importFrom logger log_error log_info
+#' @examples
+#' get_usdhuf()
 
 get_usdhuf <- function(retried=0){
   tryCatch({
     usdhuf <- fromJSON('https://api.exchangerate.host/latest?base=USD&symbols=HUF')$rates$HUF
-    assert_number # from checkmate
+    assert_number(usdhuf, lower = 220, upper = 420) # from checkmate
   }, error=function(e){  # in case sth wrong with the function, sleep for 1s then can the fun() again, error handling mechanism
     log_error(e$message) # with error, we'll know the error time and info
     Sys.sleep(1+retried^2)
@@ -20,8 +22,8 @@ get_usdhuf <- function(retried=0){
 }
 
 #' Look up the historical values of a US dollar in Hungarian Forints
-#' @param start_date first date of time series
-#' @param end_date last date of time series
+#' @param start_date the first day of the time range you would like to query
+#' @param end_date the last day of the time range you would like to query
 #' @inheritParams get_usdhuf
 #' @return \code{data.table} object
 #' @export
@@ -29,6 +31,9 @@ get_usdhuf <- function(retried=0){
 #' @importFrom logger log_error log_info
 #' @importFrom data.table data.table
 #' @importFrom httr GET content
+#' @examples
+#' get_usdhufs()
+#' get_usdhufs(start_date = "2021-04-11", end_date = "2021-05-11")
 
 get_usdhufs <- function(start_date = Sys.Date() - 30, end_date= Sys.Date(), retried=0){
   tryCatch({
@@ -38,14 +43,14 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date= Sys.Date(), retr
         base= 'USD',
         symbols='HUF',
         start_date = start_date,
-        end_date= end_date
+        end_date = end_date
       )
     )
     exchange_rates <- content(response)$rates
     usdhufs <- data.table(
       date=as.Date(names(exchange_rates)),
       usdhuf=as.numeric(unlist(exchange_rates)))
-    assert_numeric(usdhufs$usdhuf, lower = 250, upper = 400)
+    assert_numeric(usdhufs$usdhuf, lower = 220, upper = 420)
   }, error=function(e){
     log_error(e$message)
     Sys.sleep(1+retried^2)
@@ -53,6 +58,5 @@ get_usdhufs <- function(start_date = Sys.Date() - 30, end_date= Sys.Date(), retr
                 end_date= Sys.Date(),
                 retried = retried+1)
   })
-  log_info('1 USD = {usdhuf} HUF')
   usdhufs
 }

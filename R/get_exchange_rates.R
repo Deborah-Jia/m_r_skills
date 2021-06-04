@@ -44,6 +44,6 @@ get_exchange_rates <- function(base= 'USD',
                        end_date= Sys.Date(),
                        retried = retried+1)
   })
-  log_info('1 {base} = {rate} {symbols}')
+  log_info('1 {base} in {symbols}')
   rates
 }

@@ -1,12 +1,16 @@
 Package: mr
 Type: Package
 Title: Demo R package for the Mastering R skills class
-Version: 0.1.0
+Version: 0.1.2
+URL: https://github.com/Deborah-Jia/m_r_skills/
 Author: Deborah <jia_li@student.ceu.edu>
 Maintainer: Deborah <jia_li@student.ceu.edu>
 Description: Demo R package for the Mastering R skills class home assignment.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
-Imports: checkmate, httr, data.table, logger, scales, binancer, jsonlite
+RoxygenNote: 7.1.1
+Imports: checkmate, scales, httr, data.table, jsonlite, logger, binancer
+Remotes: github::daroczig/binancer
+Suggests: 
+    testthat
