@@ -15,3 +15,6 @@ number
 \description{
 Look up the values of a US dollar in Hungarian Forints
 }
+\examples{
+get_usdhuf()
+}

@@ -3,8 +3,9 @@
 #' @return number
 #' @export
 #' @importFrom checkmate assert_number
-#' @importFrom logger log_error log_info
 #' @importFrom jsonlite fromJSON
+#' @importFrom logger log_error log_info
+#' @examples
 #' get_usdhuf()
 
 get_usdhuf <- function(retried=0){

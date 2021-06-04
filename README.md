@@ -11,12 +11,7 @@ This package is built to track the price of bitcoin price. Important functions i
 * __get_exchange_rates__, returns historical prices of one currency (the base) to another currency (the symbols). You can decide the time range of your inquiry and the currency types.
 
 
-<<<<<<< HEAD
-
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/Deborah-Jia/m_r_skills.svg?branch=forint_test)](https://travis-ci.org/Deborah-Jia/m_r_skills)
 <!-- badges: end -->
-=======
-* __get_usdhufs__, returns historical prices of one US dollar to Hungarian Forint. You can decide the time range of your inquiry.
-* __get_exchange_rates__, returns historical prices of one currency (the base) to another currency (the symbols). You can decide the time range of your inquiry and the currency types.
->>>>>>> main
+

@@ -7,15 +7,9 @@
 get_usdhufs(start_date = Sys.Date() - 30, end_date = Sys.Date(), retried = 0)
 }
 \arguments{
-<<<<<<< HEAD
 \item{start_date}{the first day of the time range you would like to query}
 
 \item{end_date}{the last day of the time range you would like to query}
-=======
-\item{start_date}{first date of time series}
-
-\item{end_date}{last date of time series}
->>>>>>> main
 
 \item{retried}{number of times the function already failed}
 }
@@ -24,4 +18,8 @@ get_usdhufs(start_date = Sys.Date() - 30, end_date = Sys.Date(), retried = 0)
 }
 \description{
 Look up the historical values of a US dollar in Hungarian Forints
+}
+\examples{
+get_usdhufs()
+get_usdhufs(start_date = "2021-04-11", end_date = "2021-05-11")
 }

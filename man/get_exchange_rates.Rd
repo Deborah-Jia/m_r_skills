@@ -13,13 +13,13 @@ get_exchange_rates(
 )
 }
 \arguments{
-\item{base}{date}
+\item{base}{currency symbol}
 
-\item{symbols}{date}
+\item{symbols}{currency symbol}
 
-\item{start_date}{currency symbol}
+\item{start_date}{date}
 
-\item{end_date}{currency symbol}
+\item{end_date}{date}
 
 \item{retried}{number of times the function already failed}
 }
