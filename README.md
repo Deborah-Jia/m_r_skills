@@ -12,6 +12,6 @@ This package is built to track the price of bitcoin price. Important functions i
 
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/Deborah-Jia/m_r_skills.svg?branch=forint_test)](https://travis-ci.org/Deborah-Jia/m_r_skills)
+[![Travis build status](https://travis-ci.com/Deborah-Jia/m_r_skills.svg?branch=forint_test)](https://travis-ci.com/Deborah-Jia/m_r_skills)
 <!-- badges: end -->
 
