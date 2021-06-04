@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Look up the values of a US dollar in Hungarian Forints — get_usdhuf • mr</title>
+<title>Look up the historical values of base currency in another currency. — get_exchange_rates • mr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Look up the values of a US dollar in Hungarian Forints — get_usdhuf" />
-<meta property="og:description" content="Look up the values of a US dollar in Hungarian Forints" />
+<meta property="og:title" content="Look up the historical values of base currency in another currency. — get_exchange_rates" />
+<meta property="og:description" content="Look up the historical values of base currency in another currency." />
 
 
 
@@ -103,20 +103,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Look up the values of a US dollar in Hungarian Forints</h1>
+    <h1>Look up the historical values of base currency in another currency.</h1>
     
-    <div class="hidden name"><code>get_usdhuf.Rd</code></div>
+    <div class="hidden name"><code>get_exchange_rates.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Look up the values of a US dollar in Hungarian Forints</p>
+    <p>Look up the historical values of base currency in another currency.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_usdhuf</span><span class='op'>(</span>retried <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_exchange_rates</span><span class='op'>(</span>
+  base <span class='op'>=</span> <span class='st'>"USD"</span>,
+  symbols <span class='op'>=</span> <span class='st'>"HUF"</span>,
+  start_date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>30</span>,
+  end_date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span>,
+  retried <span class='op'>=</span> <span class='fl'>0</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>base</th>
+      <td><p>currency symbol</p></td>
+    </tr>
+    <tr>
+      <th>symbols</th>
+      <td><p>currency symbol</p></td>
+    </tr>
+    <tr>
+      <th>start_date</th>
+      <td><p>date</p></td>
+    </tr>
+    <tr>
+      <th>end_date</th>
+      <td><p>date</p></td>
+    </tr>
     <tr>
       <th>retried</th>
       <td><p>number of times the function already failed</p></td>
@@ -125,11 +147,94 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>number</p>
+    <p><code>data.table</code> object</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_usdhuf</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 286.69</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>get_exchange_rates</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;           date     rate
+#&gt;  1: 2021-05-05 298.9222
+#&gt;  2: 2021-05-06 297.1086
+#&gt;  3: 2021-05-07 294.7075
+#&gt;  4: 2021-05-08 294.6800
+#&gt;  5: 2021-05-09 294.1630
+#&gt;  6: 2021-05-10 294.6985
+#&gt;  7: 2021-05-11 295.3076
+#&gt;  8: 2021-05-12 296.0395
+#&gt;  9: 2021-05-13 295.4357
+#&gt; 10: 2021-05-14 292.4401
+#&gt; 11: 2021-05-15 292.4400
+#&gt; 12: 2021-05-16 292.6000
+#&gt; 13: 2021-05-17 289.3575
+#&gt; 14: 2021-05-18 286.8799
+#&gt; 15: 2021-05-19 288.1644
+#&gt; 16: 2021-05-20 285.8161
+#&gt; 17: 2021-05-21 286.1500
+#&gt; 18: 2021-05-22 286.1500
+#&gt; 19: 2021-05-23 286.6095
+#&gt; 20: 2021-05-24 284.2471
+#&gt; 21: 2021-05-25 284.8744
+#&gt; 22: 2021-05-26 286.8945
+#&gt; 23: 2021-05-27 285.5705
+#&gt; 24: 2021-05-28 285.5288
+#&gt; 25: 2021-05-29 285.5289
+#&gt; 26: 2021-05-30 285.2985
+#&gt; 27: 2021-05-31 284.0395
+#&gt; 28: 2021-06-01 283.4400
+#&gt; 29: 2021-06-02 283.8190
+#&gt; 30: 2021-06-03 286.3183
+#&gt; 31: 2021-06-04 286.6900
+#&gt;           date     rate</div><div class='input'><span class='fu'>get_exchange_rates</span><span class='op'>(</span>base<span class='op'>=</span> <span class='st'>'USD'</span>, symbols<span class='op'>=</span><span class='st'>'EUR'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;           date     rate
+#&gt;  1: 2021-05-05 0.832902
+#&gt;  2: 2021-05-06 0.829121
+#&gt;  3: 2021-05-07 0.822149
+#&gt;  4: 2021-05-08 0.822149
+#&gt;  5: 2021-05-09 0.821853
+#&gt;  6: 2021-05-10 0.823757
+#&gt;  7: 2021-05-11 0.823247
+#&gt;  8: 2021-05-12 0.828181
+#&gt;  9: 2021-05-13 0.827931
+#&gt; 10: 2021-05-14 0.823423
+#&gt; 11: 2021-05-15 0.823323
+#&gt; 12: 2021-05-16 0.823314
+#&gt; 13: 2021-05-17 0.822800
+#&gt; 14: 2021-05-18 0.818073
+#&gt; 15: 2021-05-19 0.821533
+#&gt; 16: 2021-05-20 0.817924
+#&gt; 17: 2021-05-21 0.821018
+#&gt; 18: 2021-05-22 0.821018
+#&gt; 19: 2021-05-23 0.821054
+#&gt; 20: 2021-05-24 0.818554
+#&gt; 21: 2021-05-25 0.816093
+#&gt; 22: 2021-05-26 0.820165
+#&gt; 23: 2021-05-27 0.820188
+#&gt; 24: 2021-05-28 0.820174
+#&gt; 25: 2021-05-29 0.820173
+#&gt; 26: 2021-05-30 0.820102
+#&gt; 27: 2021-05-31 0.817648
+#&gt; 28: 2021-06-01 0.818565
+#&gt; 29: 2021-06-02 0.818900
+#&gt; 30: 2021-06-03 0.824347
+#&gt; 31: 2021-06-04 0.825693
+#&gt;           date     rate</div><div class='input'><span class='fu'>get_exchange_rates</span><span class='op'>(</span>base<span class='op'>=</span> <span class='st'>'USD'</span>, symbols<span class='op'>=</span><span class='st'>'GBP'</span>, start_date<span class='op'>=</span> <span class='st'>"2021-04-24"</span>, end_date<span class='op'>=</span> <span class='st'>"2021-05-10"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;           date     rate
+#&gt;  1: 2021-04-24 0.720534
+#&gt;  2: 2021-04-25 0.720806
+#&gt;  3: 2021-04-26 0.719594
+#&gt;  4: 2021-04-27 0.719241
+#&gt;  5: 2021-04-28 0.716834
+#&gt;  6: 2021-04-29 0.717175
+#&gt;  7: 2021-04-30 0.723772
+#&gt;  8: 2021-05-01 0.723743
+#&gt;  9: 2021-05-02 0.723602
+#&gt; 10: 2021-05-03 0.719236
+#&gt; 11: 2021-05-04 0.719792
+#&gt; 12: 2021-05-05 0.719119
+#&gt; 13: 2021-05-06 0.719746
+#&gt; 14: 2021-05-07 0.714896
+#&gt; 15: 2021-05-08 0.715052
+#&gt; 16: 2021-05-09 0.712799
+#&gt; 17: 2021-05-10 0.707850</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
