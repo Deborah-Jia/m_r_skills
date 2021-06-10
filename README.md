@@ -2,7 +2,7 @@
 
 This page is the home assignment demo of CEU course [Mastering R Skills](https://courses.ceu.edu/courses/2020-2021/mastering-r-skills). Many thanks to instructors [Gergely Daroczi](https://www.linkedin.com/in/daroczig/) and [Mihály ORSÓS](https://www.linkedin.com/in/orsosmihaly/). Thank you for your patience throughout this year. It meant a lot to me.
 
-This package is built to track the price of bitcoin price. Important functions in the m_r_skills Package include:
+This package is built to track bitcoin price. Important functions in the m_r_skills Package include:
 
 * __forint__, add Hungarian Forint sign to pure number.
 * __get_usdhuf__, returns current price of one US dollar to Hungarian Forint.  
